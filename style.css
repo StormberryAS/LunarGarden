@@ -9,6 +9,7 @@
   --border: rgba(255, 255, 255, 0.08);
   --glass-bg: rgba(16, 24, 48, 0.6);
   --glass-border: rgba(255, 255, 255, 0.05);
+  --grad-primary: linear-gradient(135deg, #4CAF50, #81C784);
   
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --r-lg: 1.5rem;
@@ -30,6 +31,12 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
+}
+
+.main-container {
+  flex: 1;
+  display: flex;
   justify-content: center;
   padding: 2rem 1rem;
 }
@@ -42,12 +49,55 @@ body {
   gap: var(--sp-xl);
 }
 
-/* Header */
-.app-header { text-align: center; }
-.logo { display: inline-flex; align-items: center; justify-content: center; gap: 0.75rem; margin-bottom: 0.5rem; }
-.brand-icon { width: 36px; height: 36px; }
-.app-header h1 { font-weight: 800; font-size: 2.2rem; letter-spacing: -0.02em; }
-.subtitle { color: var(--text-secondary); font-size: 1rem; }
+/* ── HEADER (Identical to SunApp) ───────────────────────────── */
+.site-header {
+  position: relative;
+  border-bottom: 1px solid var(--border);
+  padding: 3rem 1rem 2rem;
+  overflow: hidden;
+  text-align: center;
+}
+
+.header-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 70% at 50% 30%, rgba(76,175,80,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.header-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-md);
+}
+
+.sun-icon {
+  width: 80px;
+  height: 80px;
+  filter: drop-shadow(0 0 18px rgba(76, 175, 80, 0.5));
+}
+
+.header-text h1 {
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+}
+
+.tagline {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 0.3rem;
+  line-height: 1.4;
+}
 
 /* Panels */
 .glass-panel {
@@ -98,16 +148,69 @@ body {
 .btn-primary:active { transform: translateY(0); }
 .btn-icon { width: 18px; height: 18px; }
 
-/* Footer */
-.app-footer { text-align: center; margin-top: var(--sp-lg); padding-top: var(--sp-lg); border-top: 1px solid var(--border); }
-.footer-logo { font-size: 1.5rem; font-weight: 700; color: var(--text-primary); text-decoration: none; display: inline-block; margin-bottom: 0.5rem; }
-.footer-dot { background: linear-gradient(135deg, #E21E26, #FF4D54); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.footer-tagline { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: var(--sp-lg); }
-.footer-nav ul { list-style: none; display: flex; justify-content: center; gap: var(--sp-md); flex-wrap: wrap; margin-bottom: var(--sp-lg); }
-.footer-nav a { color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
-.footer-nav a:hover { color: var(--text-primary); }
-.copyright, .disclaimer, .agent-credit { color: rgba(255,255,255,0.3); font-size: 0.85rem; margin-bottom: 0.2rem; }
-.disclaimer a { color: rgba(255,255,255,0.4); text-decoration: none; border-bottom: 1px dotted rgba(255,255,255,0.2); }
+/* ── FOOTER (Identical to SunApp) ───────────────────────────── */
+.site-footer {
+  margin-top: auto;
+  border-top: 1px solid var(--border);
+  padding: 3rem 1rem 2rem;
+}
+
+.footer-inner {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-lg);
+  align-items: center;
+  text-align: center;
+}
+
+.footer-brand { margin-bottom: var(--sp-sm); }
+.footer-logo {
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.footer-dot {
+  background: linear-gradient(135deg, #E21E26, #FF4D54);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.footer-tagline { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5; }
+.footer-powered { color: var(--text-secondary); font-size: 0.9rem; }
+.footer-powered a { color: var(--text-primary); text-decoration: none; border-bottom: 1px dotted rgba(255,255,255,0.3); }
+
+.footer-bottom {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+  color: rgba(255,255,255,0.3);
+  font-size: 0.85rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.footer-social a { color: var(--text-secondary); transition: color 0.2s; }
+.footer-social a:hover { color: var(--text-primary); }
+
+.footer-privacy { color: var(--accent-light); opacity: 0.8; margin-top: 0.5rem; }
+.footer-ai { color: rgba(255,255,255,0.2); font-size: 0.75rem; margin-top: 0.2rem; }
 
 .fade-in { animation: fadeIn 0.5s ease-out forwards; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
