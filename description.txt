@@ -1,0 +1,16 @@
+LunarGarden – Moon‑Phase Gardening Planner
+
+Core Functionality:
+- Suggest planting, watering and harvesting tasks based on the current lunar phase.
+- Calendar view with glass‑morphism cards for each day.
+- Export to iCal or CSV for personal use.
+
+Why it fits:
+- Directly uses MoonApp’s phase data.
+- Gives a practical, everyday use‑case for moon enthusiasts.
+- Keeps the premium dark‑mode aesthetic.
+
+Potential UI Elements:
+- Calendar grid with subtle moon‑phase icons.
+- Animated seed‑to‑plant growth bar.
+- Simple “Add to calendar” button.

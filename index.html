@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>LunarGarden | Stormberry</title>
+    <meta name="description" content="Offline-first biodynamic moon-phase planting calendar. Powered by Stormberry." />
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <!-- Fonts -->
+    <link rel="stylesheet" href="fonts/inter/inter.css" />
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Dependencies -->
+    <script src="suncalc.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body class="dark-theme">
+    <div class="app-container">
+      <!-- HEADER -->
+      <header class="app-header">
+        <div class="logo">
+          <svg viewBox="0 0 24 24" fill="none" class="brand-icon" aria-hidden="true">
+            <defs>
+              <linearGradient id="gardenGrad" x1="0" y1="24" x2="24" y2="0">
+                <stop offset="0%" stop-color="#4CAF50" />
+                <stop offset="100%" stop-color="#81C784" />
+              </linearGradient>
+            </defs>
+            <path d="M12 22V11M12 11C12 7.5 14.5 4 19 3C19 8.5 15.5 11 12 11ZM12 11C12 8.5 10 6.5 6.5 6C6.5 10 9 11 12 11Z" stroke="url(#gardenGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h1>LunarGarden</h1>
+        </div>
+        <p class="subtitle">Biodynamic planting &amp; harvest guide</p>
+      </header>
+
+      <!-- MAIN CONTENT -->
+      <main class="main-content">
+        <!-- Hero: Current Phase & Action -->
+        <section class="hero-card glass-panel fade-in">
+          <div class="hero-header">
+            <h2 id="current-phase-name">Calculating...</h2>
+            <span id="current-phase-illum" class="illum-badge">--%</span>
+          </div>
+          <p id="current-phase-desc" class="hero-desc">Analyzing the lunar cycle to find the optimal gardening tasks for today...</p>
+          <div class="hero-action-box">
+            <h3 class="action-title">Optimal Task Today</h3>
+            <p id="current-task-desc" class="action-desc">--</p>
+          </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="timeline-header">
+          <h3>Upcoming Lunar Cycles</h3>
+          <p>Your 28-day biodynamic forecast</p>
+        </div>
+
+        <!-- 4-Phase Timeline Grid -->
+        <section class="timeline-grid fade-in">
+          <!-- Card 1 -->
+          <div class="phase-card glass-panel" id="card-0">
+            <div class="card-timeline-marker"></div>
+            <h4 class="phase-title">Phase 1</h4>
+            <p class="phase-date">Loading...</p>
+            <p class="phase-task">--</p>
+          </div>
+          <!-- Card 2 -->
+          <div class="phase-card glass-panel" id="card-1">
+            <div class="card-timeline-marker"></div>
+            <h4 class="phase-title">Phase 2</h4>
+            <p class="phase-date">Loading...</p>
+            <p class="phase-task">--</p>
+          </div>
+          <!-- Card 3 -->
+          <div class="phase-card glass-panel" id="card-2">
+            <div class="card-timeline-marker"></div>
+            <h4 class="phase-title">Phase 3</h4>
+            <p class="phase-date">Loading...</p>
+            <p class="phase-task">--</p>
+          </div>
+          <!-- Card 4 -->
+          <div class="phase-card glass-panel" id="card-3">
+            <div class="card-timeline-marker"></div>
+            <h4 class="phase-title">Phase 4</h4>
+            <p class="phase-date">Loading...</p>
+            <p class="phase-task">--</p>
+          </div>
+        </section>
+
+        <!-- EXPORT CALENDAR BUTTON -->
+        <div class="export-container fade-in">
+          <button id="export-ics-btn" class="btn btn-primary" aria-live="polite">
+            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="btn-icon"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/></svg>
+            Export Phase Guide (.ics)
+          </button>
+        </div>
+      </main>
+
+      <!-- STANDARDIZED FOOTER -->
+      <footer class="app-footer">
+        <a href="https://stormberry.as" class="footer-logo">
+          Stormberry<span class="footer-dot">.</span>
+        </a>
+        <p class="footer-tagline">Sovereign precision, no tracking.</p>
+        <nav class="footer-nav">
+          <ul>
+            <li><a href="https://no.linkedin.com/company/stormberry-as" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://x.com/StormberryAS" target="_blank" rel="noopener">X</a></li>
+            <li><a href="https://github.com/StormberryAS" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://youtube.com/@StormberryAS" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="https://primal.net/p/npub15xyuqqd28c465f242m2jsw9sl4nzhthn7f05p4tqu6p5w525v95q7qnvpe" target="_blank" rel="noopener">Nostr</a></li>
+          </ul>
+        </nav>
+        <p class="copyright">&copy; <span id="current-year"></span> Stormberry A.S.</p>
+        <p class="disclaimer">Powered by <a href="https://github.com/mourner/suncalc" target="_blank" rel="noopener">SunCalc</a>.</p>
+        <p class="agent-credit">Co-engineered explicitly by Agent.</p>
+      </footer>
+    </div>
+  </body>
+</html>
