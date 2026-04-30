@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Set current year
-  document.getElementById('current-year').textContent = new Date().getFullYear();
+  // Set current year if element exists
+  const yearEl = document.getElementById('current-year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   // Biodynamic Configuration
   const phaseConfig = {
