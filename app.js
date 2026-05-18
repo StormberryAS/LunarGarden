@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
       icsContent += `DTSTART;VALUE=DATE:${dtStart}\r\n`;
       icsContent += `DTEND;VALUE=DATE:${dtEnd}\r\n`;
       icsContent += `SUMMARY:Lunar Planting: ${conf.shortTask}\r\n`;
-      icsContent += `DESCRIPTION:${conf.name}. ${conf.advice} (Computed entirely offline via locally hosted SunCalc astronomical algorithms by Stormberry A.S.)\r\n`;
+      icsContent += `DESCRIPTION:${conf.name}. ${conf.advice} (Computed entirely offline via locally hosted SunCalc astronomical algorithms by Stormberry AS)\r\n`;
       icsContent += "END:VEVENT\r\n";
     });
 

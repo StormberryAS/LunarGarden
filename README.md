@@ -1,20 +1,24 @@
-# LunarGarden | Biodynamic Moon-Phase Planter
-<br/>
+# LunarGarden
 
-**LunarGarden** is a sovereign, totally offline astronomical biodynamic planting calendar created by **Stormberry**. 
+Sovereign, fully-offline biodynamic moon-phase planter. LunarGarden translates lunar illumination data into actionable agricultural quarters and predicts when sap flows above and below ground, so growers can time their crop work to the lunar cycle.
 
-It deterministically translates mathematical lunar illumination data directly into actionable agricultural quarters, evaluating exactly when sap flows above and below ground to mechanically optimize your crop yields. Zero tracking, zero analytics, and zero external cookies—just pure local astronomy using the `SunCalc` library.
+**Live:** [garden.stormberry.as](https://garden.stormberry.as)
 
-### Key Features
-* **Astronomical Quarters Tracking**: Computes true local lunar quarters (Leafy, Fruiting, Root, Maintenance) accurately from your device in real-time.
-* **Forecast Timeline System**: Visually plots the exact boundary dates of the upcoming four astrological phases spanning the next full lunar cycle.
-* **Native .ICS Calendar Generation**: Features a standalone JavaScript compiler to instantly bundle those future phase quarters into a single robust `.ics` file for easy import into Apple Calendar, Google Calendar, or Outlook.
-* **Sovereign Sandbox**: Engineered entirely with a pure, standalone HTML/CSS/JS framework, eliminating dependency on external host resolvers or REST APIS.
+## Features
+- **Astronomical quarters**: computes local lunar quarters (Leafy, Fruiting, Root, Maintenance) accurately from the device in real time.
+- **Forecast timeline**: visually plots the exact boundary dates of the next four lunar phase-quarters across an upcoming full lunar cycle.
+- **Native .ics export**: bundles future phase-quarters into a single `.ics` file for import into any major calendar app (Apple, Outlook, ProtonCalendar, etc.).
+- **Sovereign sandbox**: pure HTML/CSS/JS, no external host resolvers, no REST APIs.
 
-## Technology Stack
-- **Vanilla HTML5 / CSS3 / JavaScript**.
-- Stormberry Dark-Mode Inter & Glassmorphism Design System.
-- [SunCalc](https://github.com/mourner/suncalc) backend mathematical engine for planetary phase positioning.
+## Architecture
+- **Vanilla HTML/CSS/JS**, no frameworks, no build step.
+- **Privacy first**, zero external requests after page load, zero tracking, zero cookies.
+- Stormberry dark-mode glassmorphism design system, Inter typography.
+- **Sovereign AI**, built and maintained using high-speed agentic workflows.
 
----
-*Developed and maintained securely by [Stormberry A.S.](https://stormberry.as)*
+## Stack
+- [SunCalc](https://github.com/mourner/suncalc) for lunar position maths, bundled locally.
+- [Inter](https://rsms.me/inter/) typeface, locally hosted.
+
+## Credits
+Built by [Stormberry AS](https://stormberry.as). Proudly powered by sovereign AI agents.
