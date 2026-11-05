@@ -11,7 +11,9 @@ Sovereign, fully-offline biodynamic moon-phase planter. LunarGarden translates l
 - **Sovereign sandbox**: pure HTML/CSS/JS, no external host resolvers, no REST APIs.
 
 ## Architecture
-- **Vanilla HTML/CSS/JS**, no frameworks, no build step.
+- **Vanilla HTML and CSS, TypeScript**, no frameworks.
+- **TypeScript source in `ts/`, compiled JavaScript committed.** `ts/app.ts` compiles to `app.js`, a classic script as before, at the path the page has always loaded. `app.js` is committed because GitHub Pages serves the repository as it is, with no build step of its own; `.gitattributes` marks it as generated. Edit the TypeScript, never the `.js`. `suncalc.js` (SunCalc 1.8.0) is vendored byte for byte and not compiled; `ts/suncalc.d.ts` declares its types.
+- **Build:** `npm run build` (`tools/build-ts.sh`) installs the pinned compiler (`npm ci`), compiles, then runs `bump_assets.py` to restamp the `?v=` cache stamps. `npm run check` changes nothing and fails when the committed JavaScript is not what the TypeScript compiles to. `npm test` runs the tests in `tests/` (Node 24). The published app has no runtime dependencies.
 - **Privacy first**, zero external requests after page load, zero tracking, zero cookies.
 - Stormberry dark-mode glassmorphism design system, Inter typography.
 - **Sovereign AI**, built and maintained using high-speed agentic workflows.
