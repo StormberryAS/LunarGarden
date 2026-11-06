@@ -14,6 +14,9 @@
 # disclaimer.html and privacy.html are deliberately NOT excluded: they are the published
 # pages the footer links to. Only the Markdown sources are withheld.
 #
+# description.txt is excluded (6 November 2026). It is the planning note from the start of
+# the project, not part of the app, and no served file links it.
+#
 # TypeScript (5 November 2026): the page code is written in ts/ and compiled by tools/build-ts.sh
 # into app.js, which IS published (GitHub Pages has no build step, so the compiled file is
 # committed), as is the vendored suncalc.js. The sources (ts/, with the SunCalc declarations), the
@@ -25,6 +28,7 @@ exclude:
   - DISCLAIMER.md
   - LICENSE
   - README.md
+  - description.txt
   - bump_assets.py
   - tools/
   - tests/
