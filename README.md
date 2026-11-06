@@ -1,6 +1,6 @@
 # LunarGarden
 
-Sovereign, fully-offline biodynamic moon-phase planter. LunarGarden translates lunar illumination data into actionable agricultural quarters and predicts when sap flows above and below ground, so growers can time their crop work to the lunar cycle.
+Sovereign biodynamic moon-phase planter. The calculation runs in your browser; nothing is sent to a server. LunarGarden translates lunar illumination data into actionable agricultural quarters and predicts when sap flows above and below ground, so growers can time their crop work to the lunar cycle.
 
 **Live:** [garden.stormberry.as](https://garden.stormberry.as)
 

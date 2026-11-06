@@ -34,6 +34,9 @@ body {
   flex-direction: column;
 }
 
+/* Form controls take the page font (the browser's own style gives them a system font). */
+button, input, select, textarea { font-family: var(--font-sans); }
+
 .main-container {
   flex: 1;
   display: flex;
@@ -251,6 +254,7 @@ body {
    own form styles off it. */
 .app-switcher-container input.switcher-pause {
   all: revert;
+  font-family: var(--font-sans);
   margin: 0 0.5rem 0.75rem 0;
   vertical-align: middle;
   accent-color: var(--accent-light);

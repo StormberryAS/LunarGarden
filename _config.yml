@@ -24,6 +24,11 @@
 # files and .npmrc, and node_modules/, where npm ci puts TypeScript, are excluded. (.npmrc and
 # .gitattributes are dot files, which Jekyll never publishes; .npmrc is listed anyway, as in
 # AstroQuiz, EclipseTracker and GDPRLetterBuilder.)
+#
+# theme: null (6 November 2026): the repository sets no theme, so GitHub Pages used its default,
+# jekyll-theme-primer, and published the theme's own stylesheet as /assets/css/style.css, a file
+# nothing here links. No theme means that file is no longer published. No page changes.
+theme: null
 exclude:
   - DISCLAIMER.md
   - LICENSE
